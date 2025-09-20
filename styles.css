@@ -207,7 +207,7 @@
 
         /* Hero Section */
         .hero {
-            height: 500px;
+            height: 550px;
             display: flex;
             align-items: center;
             background:linear-gradient(135deg, #e0f0ff, #f3e8ff);
