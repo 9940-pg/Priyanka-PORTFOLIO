@@ -73,6 +73,14 @@
             box-shadow: var(--shadow);
         }
 
+
+        .hero-container {
+    width: 100%;
+    max-width: 1200px; /* optional, for large screens */
+    margin: 0 auto; /* centers the content */
+}
+
+
         .btn-outline {
             background: transparent;
             border: 2px solid var(--primary);
@@ -909,7 +917,12 @@
         display: flex; /* show when hamburger clicked */
     }
 
+  .hero-container {
+        padding: 0 20px; /* keeps content from touching edges */
+    }
 
-
+body {
+    overflow-x: hidden;
+}
 
 }
