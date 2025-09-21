@@ -13,6 +13,13 @@
             --border-radius: 8px;
         }
 
+        html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* horizontal scroll disable */
+       }
+
+
         /* Base Styles */
         * {
             margin: 0;
@@ -915,6 +922,25 @@
     
   }
 
+  .projects {
+  display: grid; /* ya flex jo bhi use kar rahi ho */
+  gap: 20px; /* card ke beech space */
+  padding: 0 15px; /* left-right padding safe */
+  box-sizing: border-box;
+}
+
+.projects .card {
+  max-width: 100%;
+}
+
+.projects .card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
   .hamburger div {
     width: 25px;
     height: 2px;
@@ -1007,7 +1033,8 @@ footer h4 {
 footer h4::after {
   content: "";
   position: absolute;
-  left: 35% !important;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: -5px;
   width: 40px;   /* underline ki lambai */
   height: 2px;
