@@ -223,6 +223,19 @@
             overflow: hidden;
         }
 
+        .btn-hide{
+             display: inline-block;
+            padding: 7px 15px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 15px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
      @keyframes float {
   0%   { transform: translateY(0); opacity: 0.4; }
   50%  { transform: translateY(-25px); opacity: 1; }
@@ -791,22 +804,49 @@
         
 
 
-     /* 📱 Hero section fix for mobile */
+     /* 📱 Mobile fixes */
 @media (max-width: 576px) {
+  body {
+    overflow-x: hidden; /* prevent horizontal scroll */
+  }
+
+
+  /* About Section - stack education below intro on mobile */
+#about .about-row {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    gap: 20px; /* spacing between intro and education */
+}
+
+#about .about-row > div {
+    width: 100%; /* full width for each block */
+    margin: 0 auto;
+}
+
+
+  /* Hero Section */
   .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 120px; /* header se thoda gap */
-    height: 750px;
+    padding-top: 120px; /* header gap */
+    height: 770px;
   }
 
-  /* Hero Image fix */
+   .btn-hide {
+    display: none;
+  }
+
+  .hero-container {
+    padding: 0 20px; /* content spacing from edges */
+  }
+
   .hero-image {
-    margin-bottom: 25px;   /* image ke niche gap */
-      order: -1;
-      width: 50%;
+    order: -1;
+    width: 60%;
+    margin: 0 auto 25px; /* centers horizontally */
+    display: block;
   }
 
   .profile-image {
@@ -814,27 +854,22 @@
     height: auto;
   }
 
- 
-
-  /* Hero Content stable below image */
   .hero-content {
     padding-top: 30px;
-    width: 100%;
-    max-width: 95%;
-     order: 2;
-     margin: 0;
+    margin: 0 auto;
+    max-width: 90%;
+    text-align: center;
+    
   }
 
   .hero-content h1 {
-    font-size: 22px;
+    font-size: 25px;
     line-height: 1.3;
-
   }
 
   .typing {
-    font-size: 17px;
+    font-size: 19px;
   }
-
 
   .hero-content p {
     font-size: 16px;
@@ -842,87 +877,142 @@
     margin: 25px 0 18px;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .hero-buttons .btn {
-    font-size: 14px;
-    padding: 8px 15px;
-  }
-
-  .social-links {
+  .hero-btns {
+    gap: 12px;
+    align-items: center;
     justify-content: center;
-    margin-top: 12px;
+    flex-direction: column;
+
+  }
+
+  .hero-btns .btn {
+    font-size: 14px;
+    padding: 9px 18px;
+    min-width: 160px;
+    text-align: center;
+  }
+
+  .social-row,
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
     gap: 12px;
     
   }
 
-   .particle {
+  .particle {
     display: none !important;
   }
 
-  .hero-btns {
-    /* buttons ek ke niche ek */
-  gap: 12px;
-  align-items: center;     /* center horizontally */
-  justify-content: center;
+  /* Hamburger Menu */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 0px;
+
+    
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 2px;
+    background: var(--dark);
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+/* Hamburger Menu - smaller right-side panel */
+/* Hamburger Menu - small dropdown at top-right */
+.nav-menu {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    position: absolute;
+    top: 50px;       /* right below header/hamburger */
+    right: 10px;     /* aligned to right edge */
+    width: 180px;    /* smaller panel */
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
 }
 
-.hero-btns .btn {
-  font-size: 14px;
-  padding: 9px 18px;
-  min-width: 160px;        /* thoda equal width dikhne ke liye */
-  text-align: center;
+.nav-menu li {
+    margin: 10px 0; /* spacing between menu items */
 }
 
-.social-row {
-  display: flex;
-  justify-content: center; /* center horizontally */
-  margin-top: 14px;
-  gap: 14px;
+.nav-menu.active {
+    display: flex;  /* show on hamburger click */
 }
 
 
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        margin-right: 35px;
+
+  /* About, Footer, and other containers */
+  .container,
+  .about-row,
+  .contact-container,
+  .footer-container,
+  .footer-col {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+ /* Contact Section - Updated for Left Alignment */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        /* Add left padding for mobile to push content to the left */
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
-    .hamburger div {
-        width: 25px;
-        height: 2px;
-        background: var(--dark);
-        margin: 5px 0;
-        transition: 0.3s;
+    .contact-info {
+        /* Align the whole info section to the left */
+        align-items: flex-start;
     }
 
-    .nav-menu {
-        display: none; /* hide nav by default on mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* adjust based on header height */
-        right: 10px;
-        background: #fff;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        z-index: 1000;
+    .contact-item {
+        /* This keeps the icon and text aligned side-by-side */
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        /* Ensure each item starts from the left edge */
+        justify-content: flex-start;
     }
 
-    .nav-menu.active {
-        display: flex; /* show when hamburger clicked */
+    .contact-details h4,
+    .contact-details p {
+        text-align: left;
     }
 
-  .hero-container {
-        padding: 0 20px; /* keeps content from touching edges */
-    }
 
-body {
-    overflow-x: hidden;
+
+
+  .hero-content, .about-row, .contact-info, .footer-col {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+footer h4 {
+  position: relative;
+  display: inline-block; /* underline sirf text tak */
+  margin-bottom: 12px;
 }
+
+footer h4::after {
+  content: "";
+  position: absolute;
+  left: 35% !important;
+  bottom: -5px;
+  width: 40px;   /* underline ki lambai */
+  height: 2px;
+  background: var(--primary); /* tumhara blue color */
+}
+
 
 }
