@@ -981,7 +981,8 @@
   .about-row,
   .contact-container,
   .footer-container,
-  .footer-col {
+  .footer-col 
+  .projects-container{
     padding-left: 15px;
     padding-right: 15px;
     max-width: 100%;
@@ -1034,7 +1035,7 @@ footer h4 {
 footer h4::after {
   content: "";
   position: absolute;
-  left: 50%;
+  left: 50% !important;
   transform: translateX(-50%);
   bottom: -5px;
   width: 40px;   /* underline ki lambai */
