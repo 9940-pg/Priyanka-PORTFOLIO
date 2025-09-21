@@ -814,7 +814,7 @@
      /* 📱 Mobile fixes */
 @media (max-width: 576px) {
   body {
-    overflow-x: hidden; /* prevent horizontal scroll */
+
     box-sizing: border-box;
   }
 
@@ -930,9 +930,7 @@
   box-sizing: border-box;
 }
 
-.projects .card {
-  max-width: 100%;
-}
+
 
 .projects .card img {
   max-width: 100%;
@@ -981,8 +979,7 @@
   .about-row,
   .contact-container,
   .footer-container,
-  .footer-col 
-  .projects-container{
+  .footer-col {
     padding-left: 15px;
     padding-right: 15px;
     max-width: 100%;
@@ -1044,4 +1041,19 @@ footer h4::after {
 }
 
 
+}
+
+@media (max-width: 768px) {
+  /* Projects Section Mobile Fix */
+  .projects-container {
+    grid-template-columns: 1fr; /* एक कॉलम में बदलें */
+    gap: 25px; /* गैप थोड़ा कम करें */
+    padding: 0 10px; /* साइड से थोड़ी पैडिंग दें */
+    margin: 0 auto; /* बीच में रखें */
+  }
+
+  .project-card {
+    width: 97%; 
+    margin: 0 auto; 
+  }
 }
