@@ -1053,7 +1053,7 @@ footer h4::after {
   }
 
   .project-card {
-    width: 97%; 
+    width: 100%; 
     margin: 0 auto; 
   }
 }
