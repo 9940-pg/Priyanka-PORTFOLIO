@@ -815,6 +815,7 @@
 @media (max-width: 576px) {
   body {
     overflow-x: hidden; /* prevent horizontal scroll */
+    box-sizing: border-box;
   }
 
 
