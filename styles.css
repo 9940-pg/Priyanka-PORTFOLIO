@@ -13,11 +13,290 @@
             --border-radius: 8px;
         }
 
+          body.dark :root {
+            --primary: #4a6cf7;
+            --secondary: #5705f0;
+            --dark: #ffffff;
+            --light: #f8f9ff;
+            --gray: #f5f5f5;
+            --text: #a81919;
+            --text-light: #ffffff;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(232, 224, 224, 0.148);
+            --border-radius: 8px;
+        }
+
+          body.dark .logo{
+            color: #fff;
+          }
+
+
         html, body {
         margin: 0;
         padding: 0;
         overflow-x: hidden; /* horizontal scroll disable */
        }
+
+.toggle-checkbox {
+    width: 40px;
+    height: 20px;
+    appearance: none;
+    background: #444;              /* dark toggle bg */
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.toggle-checkbox:checked {
+    background: var(--primary);    /* toggle blue in dark mode */
+}
+.toggle-checkbox:before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+.toggle-checkbox:checked:before {
+    transform: translateX(20px);
+}
+
+
+body.dark .hamburger {
+ 
+  color: #fff;
+}
+
+
+body.dark button,
+body.dark .btn {
+    background: var(--primary) ;     /* main button stays bright blue */
+    color: #fff;                    /* keep text white */
+    border: none;
+    transition: var(--transition);
+}
+
+body.dark button:hover,
+body.dark .btn:hover {
+    background: var(--secondary);   /* hover changes to purple */
+    transform: scale(1.05);
+    box-shadow: var(--shadow);
+}
+
+
+body.dark .hero {
+    background: linear-gradient(150deg, #000000, #101010, #020225de); 
+    color: var(--text);
+}
+
+body.dark .hero h1,
+body.dark .hero h2 {
+    color: var(--primary);   /* hero headings pop in blue */
+}
+
+body.dark .hero p {
+    color: var(--text-light); /* softer grey for paragraph */
+}
+
+
+body.dark h2, 
+body.dark h3 {
+    color: #2563eb;   /* all headings get primary blue */
+}
+
+body.dark h1{
+  color: #fff;
+}
+
+body.dark .typing{
+  color: #f8f9ff;
+}
+
+
+body.dark a:hover {
+    color: var(--secondary);
+}
+
+body.dark .hero-content p{
+  color: #ffffffdf;
+}
+
+
+body.dark #about {
+  background:linear-gradient(135deg, #181818);
+}
+
+
+
+
+
+
+
+body.dark #about ul li{
+  color: #ffffffc7;
+}
+
+body.dark #about p {
+  color: #ffffffdc;
+}
+
+body.dark #skills {
+ background:linear-gradient(135deg, #181818);
+ 
+}
+
+body.dark #skills p{
+  color:#fff;
+}
+
+body.dark #skills li{
+  color:#ffffffd7;
+}
+
+body.dark .skill-card{
+  background:#bab6b642 !important;
+}
+
+
+
+
+body.dark .skill-card.learning {
+   background:#bab6b642 !important;
+}
+
+ body.dark  .skill-card.learning .overlay{
+  background: #1c1b1bd7 !important;
+}
+
+
+ body.dark  .particle {
+    display: block;
+  }
+
+   body.dark  #projects {
+    background:linear-gradient(135deg, #181818);
+ 
+  }
+
+   body.dark  .project-card {
+   background:#bab6b63f !important;
+ 
+  }
+
+  
+
+  body.dark  #projects p {
+    color: #fff !important;
+
+  }
+
+  
+
+
+   body.dark #contact{
+   background:linear-gradient(135deg, #181818);
+ 
+  }
+
+   body.dark #contact p {
+   color: #fff;
+ 
+  }
+
+  
+
+
+
+
+  
+   body.dark  .project-card p {
+   color: #fff;
+ 
+  }
+
+  body.dark .project-tags span {
+    background: #2a2a2a; /* dark gray for tags */
+    color: #cccccc;       /* light text for readability */
+}
+
+body.dark .project-links a {
+    color: #5b8cd6;       /* bright cyan for links in dark mode */
+}
+
+body.dark .project-links a:hover {
+    color: #4a6cf7;       /* primary blue hover effect */
+}
+
+body.dark .contact-container {
+    background: #12121200; /* dark background */
+}
+
+body.dark .contact-info h4,
+body.dark .form-group label {
+    color: #ffffff; /* white text for headings/labels */
+}
+
+body.dark .contact-details p {
+    color: #cccccc !important; /* light gray for details text */
+}
+
+body.dark .contact-form {
+     background:linear-gradient(135deg, #181818);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .form-control {
+    background: #3a393977; /* dark input background */
+    color: #ffffff; /* white text in inputs */
+    border: 1px solid #444; /* subtle border for inputs */
+}
+
+body.dark .form-control:focus {
+    border-color: #000000; /* bright accent color */
+}
+
+body.dark textarea.form-control {
+    background: #3a3939d2;
+    color: #ffffff;
+}
+
+  /* Dark mode footer */
+body.dark footer {
+    background: #0a0a0a; /* thoda aur deep black */
+    color: #2563eb; /* text ko halka bright */
+}
+
+body.dark .footer-col p,
+body.dark .footer-links a,
+body.dark .copyright {
+    color: #ffffffdf; /* halka gray so that readable */
+}
+
+body.dark .footer-links a:hover {
+    color: #ffffff; /* hover par golden */
+}
+
+body.dark .social-links a {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f5f5f5;
+}
+
+body.dark .social-links a:hover {
+    background: #060c75;
+    color: #ffffff; /* hover pe contrast */
+}
+
+
+
+
+
+
+
+
 
 
         /* Base Styles */
@@ -310,7 +589,7 @@
         }
 
         .hero-content h1 {
-            font-size: 30px;
+            font-size: 32px;
             margin-bottom: 0px;
             color: var(--dark);
         }
@@ -380,7 +659,7 @@
             margin-top: 3%;
         }
 
-       .hero-image {
+  .hero-image {
   position: relative; 
   width: 40%;       
   height: auto;
@@ -553,7 +832,7 @@
             font-size: 14px;
         }
 
-       .other-skills {
+.other-skills {
   text-align: center;
   margin-top: 40px;
 }
@@ -910,8 +1189,16 @@
   }
 
   .particle {
-    display: none !important;
+    display: none ;
   }
+
+   body.dark  .particle {
+    display: block;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+
 
   /* Hamburger Menu */
   .hamburger {
@@ -922,6 +1209,12 @@
 
     
   }
+
+ body.dark .hamburger div {
+    background: white !important;
+    
+}
+
 
   .projects {
   display: grid; /* ya flex jo bhi use kar rahi ho */
@@ -1046,10 +1339,10 @@ footer h4::after {
 @media (max-width: 768px) {
   /* Projects Section Mobile Fix */
   .projects-container {
-    grid-template-columns: 1fr; /* एक कॉलम में बदलें */
-    gap: 25px; /* गैप थोड़ा कम करें */
-    padding: 0 10px; /* साइड से थोड़ी पैडिंग दें */
-    margin: 0 auto; /* बीच में रखें */
+    grid-template-columns: 1fr; 
+    gap: 25px; 
+    padding: 0 7px; 
+    margin: 0 auto; 
   }
 
   .project-card {

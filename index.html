@@ -24,6 +24,10 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
+<label class="flex items-center space-x-2" style="cursor: pointer;">
+    <span>🌙</span>
+    <input type="checkbox" id="dark-toggle" class="toggle-checkbox">
+</label>
 
             
             
@@ -274,16 +278,16 @@ Constantly learning and building projects to grow as a developer and designer.</
                         <img src="images/makeup1.png" alt="">
                     </div>
                     <div class="project-info">
-                        <h3>Manisha Makeover</h3>
-                        <p>A modern makeup studio website featuring bridal shoot galleries, studio facilities showcase, and a fully functional contact form built with HTML, CSS & JavaScript.</p>
+                        <h3>Nova-Eats - Restaurant</h3>
+                        <p>A modern, responsive restaurant website with dark mode, smooth animations, and a parallax hero section built using HTML, Tailwind CSS, and JavaScript.</p>
                         <div class="project-tags">
                             <span>HTML</span>
-                            <span>CSS</span>
+                            <span>Tailwind CSS</span>
                             <span>JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://9940-pg.github.io/Manisha-s-Makeover-Website/"><i class="fas fa-globe"></i> Live Demo</a>
-                            <a href="https://github.com/9940-pg/Manisha-s-Makeover-Website"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://9940-pg.github.io/Nova-EATS/"><i class="fas fa-globe"></i> Live Demo</a>
+                            <a href="https://github.com/9940-pg/Nova-EATS"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -536,6 +540,26 @@ Constantly learning and building projects to grow as a developer and designer.</
 
   document.addEventListener("DOMContentLoaded", typeEffect);
 
+
+  const darkToggle = document.getElementById('dark-toggle');
+
+    if (darkToggle) {
+        // Load saved theme
+        if (localStorage.theme === 'dark') {
+            document.body.classList.add('dark');
+            darkToggle.checked = true;
+        }
+
+        darkToggle.addEventListener('change', () => {
+            if (darkToggle.checked) {
+                document.body.classList.add('dark');
+                localStorage.theme = 'dark';
+            } else {
+                document.body.classList.remove('dark');
+                localStorage.theme = 'light';
+            }
+        });
+    }
 
     </script>
 </body>
