@@ -84,7 +84,7 @@ body.dark .btn:hover {
 
 
 body.dark .hero {
-    background: linear-gradient(150deg, #020824, #09144ff3, #042b98); 
+    background: linear-gradient(150deg, #020824, #09144ff3, #020c28); 
     color: var(--text);
 }
 
