@@ -164,7 +164,8 @@ body.dark .skill-card.learning {
 }
 
  body.dark  .skill-card.learning .overlay{
-  background: #121270d7 !important;
+  background: #4949c1d7 !important;
+  color: #fff;
 }
 
 
